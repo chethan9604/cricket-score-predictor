@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        
+        img{
+            margin-top: 10px;
+            
+        }
+
+        .form-group1{
+            
+            top: 40%;
+    
+            
+            width: 55%;
+            left: 23.5%;  
+            position: absolute; 
+            text-align: center;
+           
+        
+
+        }
+
+        .form-group2{
+            position: absolute;
+            top: 60%;
+            left: 23.5%;
+            width: 55%;
+            text-align: center;
+
+            
+        }
+    
+        .form-group3{
+            position: absolute;
+            width: 55%;
+            text-align: center;
+            left: 23.5%;
+            top: 60.5%;
+            /* margin: 0 auto; */
+        }
+
+        body{
+            background-image:url("{{url_for('static',filename='cricket-stadium.webp')}}");
+            background-repeat: repeat, no-repeat;
+            background-size: 100% 100%;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+            
+        
+        
+        .container-fluid{
+            position: relative;
+            text-align: center;
+            display: inline-block;
+            color: white;
+        }
+
+        
+
+        a{
+            color: white;
+        }
+       
+        
+    </style>
+</head>
+<body background="image.jpg">
+    
+
+    <div class="row container-fluid">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <img src="{{url_for('static',filename='wallpapersden.com_gradient-sky_1242x2688.png')}}" height="725" width ='350'>
+
+            <form>
+                <div class="form-group1">
+                <label for="pred">THE PREDICTED SCORE IS BETWEEN <br> {{ lower_limit }} to {{ upper_limit }}</label>
+            </div>      
+                
+                <div class="form-group2">
+                <img src="{{url_for('static',filename='Rectangle 581.png')}}" width=100% height=23% alt="">
+                </div>
+                <div class="form-group3">
+                    
+                    <a href="{{url_for('form')}}"><img src="{{url_for('static',filename='PREDICT AGAIN.png')}}" width=85% height=40% alt=""></a>
+                </div>
+
+            </form>
+        
+    
+            <div class="col-md-4"></div>
+        </div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+</body>
+</html>

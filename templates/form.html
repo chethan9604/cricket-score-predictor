@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>ODI score predictor </title>
+    
+    
+
+    <style>
+
+        img{
+            margin-top: 10px;
+            
+        }
+
+        body{
+            background-image:url("{{url_for('static',filename='cricket-stadium.webp')}}");
+            background-repeat: repeat, no-repeat;
+            background-size: 100% 100%;
+
+        }
+        .img_submit{
+            height: 20px;;
+        }
+
+
+@media (max-width: 452px) { 
+        
+         .form-group1{
+            width: 80%;
+            left: 11%;   
+            position: absolute; 
+            text-align: center;
+            top: 6%; 
+            
+         }
+        .form-group2{
+            width: 80%;
+            left: 11%;  
+            position: absolute; 
+            text-align: center;
+            top: 16%;
+            
+        }
+        .form-group3{
+            width: 80%;
+            left: 11%;      
+            position: absolute; 
+            text-align: center;
+            top: 26%;
+            
+        }
+        .form-group4{
+            width: 80%;
+            left: 11%;     
+            position: absolute; 
+            text-align: center;
+            top: 36%;
+            
+        }
+        .form-group5{
+            width: 80%;
+            left: 11%;      
+            position: absolute; 
+            text-align: center;
+            top: 46%;
+            
+        }
+        .form-group6{
+            width: 80%;
+            left: 11%;    
+            position: absolute; 
+            text-align: center;
+            top: 56%;
+            
+        }
+        .form-group7{
+            width: 80%;
+            left: 11%;
+            position: absolute; 
+            text-align: center;
+            top: 70%;
+            
+        }
+        .form-group8{
+            width: 80%;
+            left: 11%;   
+            position: absolute; 
+            text-align: center;
+            top: 85%;
+            
+        }
+    
+        .form-group9{
+            width: 80%;
+            left: 11%;   
+            position: absolute; 
+            text-align: center;
+            top: 87%;
+        }
+        
+        .container-fluid {
+            position: relative;
+            text-align: center;
+            display: inline-block;
+            color: white;
+        } 
+} 
+
+
+@media (min-width: 454px) { 
+        
+        .form-group1{
+           width: 60%;
+           left: 21%;   
+           position: absolute; 
+           text-align: center;
+           top: 6%; 
+           
+        }
+       .form-group2{
+           width: 60%;
+           left: 21%;   
+           position: absolute; 
+           text-align: center;
+           top: 16%;
+           
+       }
+       .form-group3{
+        width: 60%;
+           left: 21%;      
+           position: absolute; 
+           text-align: center;
+           top: 26%;
+           
+       }
+       .form-group4{
+        width: 60%;
+           left: 21%;     
+           position: absolute; 
+           text-align: center;
+           top: 36%;
+           
+       }
+       .form-group5{
+        width: 60%;
+           left: 21%;      
+           position: absolute; 
+           text-align: center;
+           top: 46%;
+           
+       }
+       .form-group6{
+        width: 60%;
+           left: 21%;    
+           position: absolute; 
+           text-align: center;
+           top: 56%;
+           
+       }
+       .form-group7{
+        width: 60%;
+           left: 21%;
+           position: absolute; 
+           text-align: center;
+           top: 70%;
+           
+       }
+       .form-group8{
+        width: 60%;
+           left: 21%;   
+           position: absolute; 
+           text-align: center;
+           top: 85%;
+           
+       }
+   
+       .form-group9{
+        width: 60%;
+           left: 21%;  
+           position: absolute; 
+           text-align: center;
+           top: 87%;
+       }
+       
+       .container-fluid {
+           position: relative;
+           text-align: center;
+           display: inline-block;
+           color: white;
+       } 
+} 
+        
+    </style>
+</head>
+<body>
+    
+
+    
+        <div class="row container-fluid">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+            <form action="{{ url_for('predict') }}" method="POST" name="ipl">
+            
+                        <img src="{{url_for('static',filename='wallpapersden.com_gradient-sky_1242x2688.png')}}" height="725" width ='350'>
+                <div class="form-group1">
+                  <label for="bat_team">CHOOSE THE BATTING TEAM</label>
+                  <select class="form-control" name = 'batting-team' >
+                    <option>England</option>
+                    <option>India</option>
+                    <option>Pakistan</option>
+                    <option>Srilanka</option>
+                    <option>Australia</option>
+                    <option>South Africa</option>
+                    <option>Newzeland</option>
+                    <option>Bangladesh</option>
+                    <option>West Indies</option>
+                    <option>Ireland</option>
+                    <option>Zimbambwe</option>
+                  </select>
+                </div>
+                <div class="form-group2">
+                    <label for="bowl_team">CHOOSE THE BOWLING TEAM</label>
+                    <select class="form-control" name = 'bowling-team' >
+                        <option>England</option>
+                        <option>India</option>
+                        <option>Pakistan</option>
+                        <option>Srilanka</option>
+                        <option>Australia</option>
+                        <option>South Africa</option>
+                        <option>Newzeland</option>
+                        <option>Bangladesh</option>
+                        <option>West Indies</option>
+                        <option>Ireland</option>
+                        <option>Zimbambwe</option>
+                    </select>
+                  </div>
+                <div class="form-group3">
+                    <label for="overs">PLEASE ENTER THE CURRENT OVER</label>
+                    <input class="form-control" type="text" name = 'overs' placeholder=">5.0">
+                </div>
+                <div class="form-group4">
+                    <label for="score">PLEASE ENTER THE CURRENT SCORE</label>
+                    <input class="form-control" type="text" name="score" placeholder="Enter Score">
+                </div>
+                <div class="form-group5">
+                    <label for="wickets">PLEASE ENTER THE WICKETS FALLEN</label>
+                    <input class="form-control" type="text" name="wickets" placeholder="Wickets">
+                </div>
+                <div class="form-group6">
+                    <label for="run_in_last5">PLEASE ENTER THE RUNS SCORED IN LAST 5 OVERS</label>
+                    <input class="form-control" type="text" name="runs_in_last5" placeholder="Runs in Last 5 overs">
+                </div>
+                <div class="form-group7">
+                    <label for="wickets_in_last5">PLEASE ENTER THE WICKETS FALLEN IN LAST 5 OVERS</label>
+                    <input class="form-control" type="text" name="wickets_in_last5" placeholder="Wickets in last 5 overs">
+                </div>
+                <div class="form-group8">
+                <img src="{{url_for('static',filename='Rectangle 581.png')}}" width=100% height=23% alt="">
+                </div>
+                <div class="form-group9">
+                    <input type="image" id="img_submit" src="{{url_for('static',filename='SUBMIT.png')}}" width=30% height=20% name="Submit"  alt="">
+                </div>
+
+            </div>
+            <div class="col-md-4"></div>
+        
+    
+    
+        </div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+</body>
+</html>

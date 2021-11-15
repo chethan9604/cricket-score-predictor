@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        img{
+            margin-top: 10px;
+        }
+
+        body{
+            background-image:url("{{url_for('static',filename='cricket-stadium.webp')}}");
+            background-repeat: repeat, no-repeat;
+            background-size: 100% 100%;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+        .img_start{
+            height: 20px;;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="row container-fluid">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+    
+    
+    <center>
+        <img src="{{url_for('static',filename='DLFuim.webp')}}" style="border-radius: 100px;" height="500" width ='500',alt="">
+        <a href="{{url_for('form')}}" >
+            <input type="image" id="img_start" src="{{url_for('static',filename='start.jpg')}}" width=30% height=20% name="Submit"  alt="">
+        </a>
+    </center>
+  
+    
+    </div>
+    <div class="col-md-4"></div>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</body>
+</html>
